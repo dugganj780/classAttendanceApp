@@ -40,7 +40,9 @@ class CreateAccountActivity : AppCompatActivity() {
         binding.btnCreateAccount.setOnClickListener {
             user.firstName = binding.firstName.text.toString()
             user.surname = binding.surname.text.toString()
-            user.studentID = binding.studentId.text.toString().toLong()
+            if (binding.studentId.text.toString() != "") {
+                student.studentID = binding.studentId.text.toString().toLong()
+            }
             user.password = binding.password.text.toString()
 
             //Validation to ensure User inputs to all fields
