@@ -26,7 +26,9 @@ class LoginActivity : AppCompatActivity() {
         app = application as MainApp
 
         binding.btnLogin.setOnClickListener {
-            student.studentID = binding.studentId.text.toString().toLong()
+            if (binding.studentId.text.toString() != "") {
+                student.studentID = binding.studentId.text.toString().toLong()
+            }
             student.password = binding.password.text.toString()
 
             //Iterates through existing users for basic authentication
